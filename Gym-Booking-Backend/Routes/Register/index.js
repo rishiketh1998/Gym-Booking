@@ -2,14 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
 const bcrypt = require('bcryptjs');
-const mysql = require('mysql');
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'gym_booking_db',
-});
-
-db.connect();
+const db = require('../db.js');
 
 
 /**
@@ -56,7 +49,9 @@ router.post('/', async (req, res) => {
     res.send(result);
   } else {
     result['password'] = await bcrypt.hash(result['password'], 8);
+    console.log(result['phone_no']);
     const sql = 'Insert Into users SET ?';
+    console.log(result['phone_no']);
     const data = {
       first_name: result['first_name'],
       last_name: result['last_name'],
@@ -72,7 +67,7 @@ router.post('/', async (req, res) => {
         res.send(err['sqlMessage']);
         throw err;
       }
-      res.redirect('/details');
+      res.redirect('/login');
     });
   }
 });
