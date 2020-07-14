@@ -4,10 +4,14 @@ const bcrypt = require('bcryptjs');
 const db = require('../db.js');
 const jwt = require('jsonwebtoken');
 
-router.get('/', (req, res) => {
-  res.send('You can log in now now');
-});
 
+/**
+ * @author Rishi
+ * @description: It verifies whether the user has entered the right email id and if the user has entered the right email id,
+ * then it verifies whether the right password is entered by hashing the password entered by the user and if the user has entered the right password, then it issues a
+ * web token and stores it in the cookies with the name of access_token. If the user has either entered the wrong password or email it returns a message stating,
+ * Please verify your email and password
+ */
 router.post('/', async (req, res) => {
   const sql = `Select * from users where email_id LIKE '${req.body.email_id}' `;
   db.query(sql, (err, results) => {
