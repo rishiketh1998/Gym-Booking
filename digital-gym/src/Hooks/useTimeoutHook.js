@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
  * @description: returns the reverse boolean value of the initial state.
  * @param initialState - boolean value
  * @param time - number of seconds needed to wait for the initial state to reverse
- * @returns {[unknown]}
+ * @returns {{timer: unknown}}
  */
 export const useTimeout = (initialState,time) => {
     const [timer,setTimer] = useState(initialState)
@@ -13,6 +13,6 @@ export const useTimeout = (initialState,time) => {
         let timerValue = setTimeout(() => setTimer(!initialState), time)
         return () =>  clearTimeout(timerValue)
     },[initialState, time])
-    return [timer]
+    return {timer}
 }
 

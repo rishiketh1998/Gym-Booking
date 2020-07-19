@@ -22,7 +22,7 @@ export const Banner = ({display}) => {
      */
     const displayBanner = display =>  display ? bannerHTML : ''
     return(
-       <div data-testid={display ? 'displaying' : 'not displaying'}>
+       <div data-testid={display ? 'displaying' : 'not-displaying'}>
            {displayBanner(display)}
        </div>
     )
