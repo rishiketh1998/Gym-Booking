@@ -13,3 +13,8 @@
     --animate-duration: 3s;
 }
 
+.nav-link {
+    color: khaki;
+    font-size: large;
+}
+

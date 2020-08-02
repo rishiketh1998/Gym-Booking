@@ -1,12 +1,15 @@
 import React from "react";
 import {Banner} from "./Banner";
+import {Header} from "./Header";
 import {useTimeout} from "../Hooks/useTimeoutHook";
+import './Home.css'
 
 export const Home = () => {
-    const {timer} = useTimeout(true,4000)
+    const {timer} = useTimeout(true,3000)
     return (
-        <div>
-            <Banner display={timer}/>
-        </div>
+        <>
+            {timer && <Banner />}
+            {!timer && <Header />}
+        </>
     )
 }

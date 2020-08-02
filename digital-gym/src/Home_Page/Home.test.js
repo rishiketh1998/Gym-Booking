@@ -1,7 +1,7 @@
 import React from 'react';
 import {Banner} from "./Banner";
 import {Home} from "./Home";
-import {render} from "@testing-library/react"
+import {render, act} from "@testing-library/react"
 
 /**
  * @Author Rishi
@@ -15,69 +15,74 @@ describe('Banner Component Testing', () => {
      */
     describe('Unit Testing Banner Component', () => {
 
-        //will be set to the returned value of component that is rendered
-        let wrapper
+        let screen
+
+        /**
+         * @Author Rishi
+         * @description: it renders banner component before each test
+         */
+        beforeEach(() => {
+            screen = render(<Banner />)
+        })
 
         /**
          * @author Rishi
-         * @description: it tests UI for banner component when props passed through is True
+         * @description: test to verify that a data test id called displaying-banner is present in the banner component when rendered
          */
-        describe('When display prop passed through is set to true',  () => {
-
-            /**
-             * @author Rishi
-             * @description: rendering the Banner Component with display props set to true
-             */
-            beforeEach(() => {
-                wrapper = render(<Banner display={true} /> )
-            })
-
-            /**
-             * @author Rishi
-             * @description: test to verify whether the banner component HTML has id displaying when it is displaying to the user
-             */
-            it('verifies Banner has id "displaying" when the banner component HTMl is being displayed to the user',  () => {
-                const {getByTestId} = wrapper
-                getByTestId('displaying')
-            })
-
-            /**
-             * @author Rishi
-             * @description: verifies whether the banner being displayed has the right banner name text content.
-             */
-            it('verifies the right banner name is being displayed', () => {
-                const text = 'Digital Gym'
-                const {getByTestId} =  wrapper
-                expect(getByTestId('banner-name')).toHaveTextContent(text)
-            })
-
-        });
+        it('verifies "displaying-banner" data test id is present when banner component is rendered', () => {
+            const {getByTestId} = screen
+            getByTestId('displaying-banner')
+        })
 
         /**
          * @author Rishi
-         * @description: it verifies UI for banner component when props passed throguh is set to false
+         * @description: verifies the right banner name is being displayed on the banner component
          */
-        describe('When display prop passed through is set to false',  () => {
+        it('verifies the right banner name is being displayed on the banner component', () => {
+            const {getByTestId} = screen
+            expect(getByTestId('banner-name')).toHaveTextContent('Digital Gym')
+        })
 
-            /**
-             * @author Rishi
-             * @description: rendering the Banner Component with display props set to false
-             */
-            beforeEach(() => {
-                wrapper = render(<Banner display={false} /> )
+    });
+
+    /**
+     * @author Rishi
+     * @description: Integration test to verify Banner Component
+     */
+    describe('Integration Testing Banner Component',  () => {
+
+        let screen
+
+        /**
+         * @author Rishi
+         * @description: It renders Home component beofr eeach test function
+         */
+        beforeEach(() => {
+            screen = render(<Home />)
+        })
+
+        jest.useFakeTimers()
+
+        /**
+         * @author Rishi
+         * @description: when the home component is rendered for the first time it should contain an id called displaying-banner
+         */
+        it('verifies banner component id "displaying-banner" is present in the document when home component is rendered for the first time', () => {
+            const {queryByTestId} = screen
+            expect(queryByTestId(/displaying-banner/)).not.toBeNull()
+        })
+
+        /**
+         * @author Rishi
+         * @description: it verifies banner component "displaying banner" id is not displayed in the document after the home component is rendered for 4sec
+         */
+        it('verifies "displaying banner" test id is not displaying when banner component is not displayed to the user', () => {
+            const {queryByTestId} = screen
+            act(() => {
+                jest.advanceTimersByTime(4000)
             })
-
-            /**
-             * @author Rishi
-             * @description: verifies the banner component has id not-displaying when the banner component html should not be displayed
-             */
-            it('verifies Banner has id not-displaying when banner component html should not be displayed',() => {
-                const {getByTestId} = wrapper
-                getByTestId('not-displaying')
-            })
-
-        });
-
+            expect(queryByTestId(/displaying-banner/)).toBeNull()
+        })
 
     });
 
