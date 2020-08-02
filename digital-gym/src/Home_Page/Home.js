@@ -6,10 +6,11 @@ import './Home.css'
 
 export const Home = () => {
     const {timer} = useTimeout(true,3000)
+    if(!timer) localStorage.setItem('timer', JSON.stringify('off'))
     return (
         <>
-            {timer && <Banner />}
-            {!timer && <Header />}
+            {!localStorage['timer'] && <Banner />}
+            {localStorage['timer'] && <Header />}
         </>
     )
 }
