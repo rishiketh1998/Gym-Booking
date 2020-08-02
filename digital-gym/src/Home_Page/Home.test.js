@@ -84,6 +84,8 @@ describe('Banner Component Testing', () => {
             expect(queryByTestId(/displaying-banner/)).toBeNull()
         })
 
+
+
     });
 
 });
