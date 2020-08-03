@@ -2,6 +2,7 @@ import React from "react";
 import {Banner} from "./Banner";
 import {Header} from "./Header";
 import {useTimeout} from "../Hooks/useTimeoutHook";
+import {HomeVideo} from "./HomeVideo";
 import './Home.css'
 
 export const Home = () => {
@@ -11,6 +12,7 @@ export const Home = () => {
         <>
             {!localStorage['timer'] && <Banner />}
             {localStorage['timer'] && <Header />}
+            {localStorage['timer'] && <HomeVideo />}
         </>
     )
 }
