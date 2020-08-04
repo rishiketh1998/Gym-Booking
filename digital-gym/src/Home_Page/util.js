@@ -1,4 +1,4 @@
-export const Quote = () => {
+ const Quote = () => {
     const gymQuotes = [
         'A studio that offers you more.',
         'Always something happening.',
@@ -21,3 +21,10 @@ export const Quote = () => {
     ]
     return  gymQuotes[Math.floor(Math.random() * gymQuotes.length)]
 }
+
+const VideoList = {
+    'gymSharkVideo': 'https://www.youtube.com/embed/xZs6nCUQuuM?autoplay=1&mute=1'
+    }
+
+
+ export {Quote, VideoList}
