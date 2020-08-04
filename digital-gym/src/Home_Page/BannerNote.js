@@ -1,8 +1,6 @@
 import React from "react";
-import {Quote} from './util.js'
 
-export const BannerNote = () => {
-    const quote =  Quote()
+export const BannerNote = ({quote}) => {
     return (
        <div className='text-light'>
             <p style={{color:'crimson'}}>{quote}</p>
