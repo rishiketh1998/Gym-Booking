@@ -26,5 +26,27 @@ const VideoList = {
     'gymSharkVideo': 'https://www.youtube.com/embed/xZs6nCUQuuM?autoplay=1&mute=1'
     }
 
+const ReviewList = [
+    {
+        name: 'Boxy',
+        review: 'Had a great workout this afternoon. Equipment is spaced apart and clean. Wipes,paper and antibacterials\n' +
+        'spray are located at each area for use. There is a wide selection of machines and staff were very helpful.',
+        city: 'Manchester',
+        stars: 5
+    },
+    {
+        name: 'Kelly',
+        review: 'Joined Doncaster gym recently, the staff are friendly, there is loads of equipment and there are so many classes. Good price aswell :)',
+        city: 'Doncaster',
+        stars: 5
+    },
+    {
+        name: 'Joseph',
+        review: 'Great gym and great instructors. Big place plenty of equipment.',
+        city: 'London',
+        stars: 5
+    }
+]
 
- export {Quote, VideoList}
+
+ export {Quote, VideoList, ReviewList}
