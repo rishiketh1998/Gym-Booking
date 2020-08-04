@@ -1,17 +1,13 @@
 import React from "react";
+import {Jumbotron} from "react-bootstrap";
+import {BannerNote} from "./BannerNote";
 
-/**
- * @author Rishi
- * @description: it displays a banner with the company name along with a loading icon.
- * @returns {*}
- * @constructor
- */
 export const Banner = () => {
-    return(
-        <div className='banner-box animate__animated animate__fadeOut animate__delay-3s text-center' data-testid='displaying-banner'>
-            <h1 className='display-3 text-light' data-testid='banner-name'>Welcome to Digital Gym</h1>
-            <i className="fas fa-dumbbell display-3 mt-1 animate__animated animate__flash"
-               style={{color: 'chocolate'}}/>
-        </div>
+    return (
+            <Jumbotron className='my-3' style={{backgroundColor:'#0d0e10f0'}}>
+                <h1 className='display-4 text-info'>Digital Gym</h1>
+                <BannerNote />
+            </Jumbotron>
     )
 }
+
