@@ -2,8 +2,9 @@ import React from "react";
 import {HomeVideo} from "./HomeVideo";
 import {Banner} from "./Banner";
 import './Home.css'
-import {Quote, VideoList} from './util.js'
+import {Quote, VideoList, ReviewList} from './util.js'
 import {About} from "./About";
+import {Review} from "./Review";
 
 export const Home = () => {
     return (
@@ -14,8 +15,11 @@ export const Home = () => {
                     <div className='col-xl-4 mb-3'>
                         <About />
                     </div>
-                    <div className='col-xl-4'>
+                    <div className='col-xl-6 mb-3'>
                         <HomeVideo video={VideoList}/>
+                    </div>
+                    <div className='col-xl-4 mb-3'>
+                        <Review reviews={ReviewList}/>
                     </div>
                 </div>
             </div>
