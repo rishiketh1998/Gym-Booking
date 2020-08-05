@@ -1,5 +1,5 @@
- const Quote = () => {
-    const gymQuotes = [
+ const DigitalGymQuote = () => {
+    const DigitalGymQuote = [
         'A studio that offers you more.',
         'Always something happening.',
         'Anything you can conceive, you can achieve.',
@@ -19,7 +19,7 @@
         'Everyone in life needs balance.',
         'Find a way or make one.'
     ]
-    return  gymQuotes[Math.floor(Math.random() * gymQuotes.length)]
+    return  DigitalGymQuote[Math.floor(Math.random() * DigitalGymQuote.length)]
 }
 
 const VideoList = {
@@ -48,5 +48,48 @@ const ReviewList = [
     }
 ]
 
+ const DailyQuotesInformation = [
+     {
+         author: 'Arnold Schwarzenegger, seven-time Mr. Olympia',
+         quote: 'The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.'
+     },
+     {
+         author: 'Henry David Thoreau, poet and philosopher',
+         quote: 'Success usually comes to those who are too busy to be looking for it.'
+     },
+     {
+         author: 'Michael John Bobak, digital artist',
+         quote: 'All progress takes place outside the comfort zone.'
+     },
+     {
+         author: 'Bret Contreras, sports scientist',
+         quote: 'If you think lifting is dangerous, try being weak. Being weak is dangerous.'
+     },
+     {
+         author: 'Vidal Sassoon, hairstylist and businessman',
+         quote: 'The only place where success comes before work is in the dictionary.'
+     },
+     {
+         author: 'Greg Plitt, fitness model',
+         quote: 'The clock is ticking. Are you becoming the person you want to be?'
+     },
+     {
+         author: 'Henry Ford, industrialist',
+         quote: 'Whether you think you can, or you think you can’t, you’re right.'
+     },
+     {
+         author: 'Bruce Lee, actor and martial artist',
+         quote: 'The successful warrior is the average man, with laser-like focus.'
+     },
+     {
+         author: 'Michael Jordan, basketball player',
+         quote: 'You must expect great things of yourself before you can do them.'
+     },
+     {
+         author: 'Pablo Picasso, visual artist',
+         quote: 'Action is the foundational key to all success.'
+     },
+ ]
 
- export {Quote, VideoList, ReviewList}
+
+ export {DigitalGymQuote, VideoList, ReviewList, DailyQuotesInformation}

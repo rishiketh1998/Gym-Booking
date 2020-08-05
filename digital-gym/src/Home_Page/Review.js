@@ -21,7 +21,7 @@ export const Review = ({reviews}) => {
     return (
         <Card>
             <div className='m-2'>
-                <p className='lead text-secondary m-2'>View What our Members have to say.</p>
+                <p className='lead text-secondary m-2'>View what our <strong className='text-info'>Members</strong> have to say.</p>
                 <div className='m-2'>
                     <i className="fas fa-quote-left text-info"/>
                     <p className='m-2'>
@@ -41,7 +41,7 @@ export const Review = ({reviews}) => {
                         </div>
                     </div>
                 </div>
-                <p className='p-0' >
+                <p className='p-0 text-right'>
                     Member Already? Leave a Review <a href='/review' className='font-weight-bold text-info'>Here</a>
                 </p>
             </div>
