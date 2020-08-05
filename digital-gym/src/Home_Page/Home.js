@@ -6,6 +6,7 @@ import {DigitalGymQuote, VideoList, ReviewList, DailyQuotesInformation} from './
 import {About} from "./About";
 import {Review} from "./Review";
 import {DailyQuote} from "./DailyQuote";
+import {Promotion} from "./Promotion";
 
 export const Home = () => {
     return (
@@ -20,6 +21,7 @@ export const Home = () => {
                         <HomeVideo video={VideoList}/>
                     </div>
                     <div className='col-xl-2 mb-3'>
+                        <Promotion />
                         <DailyQuote quotes={DailyQuotesInformation}/>
                     </div>
                     <div className='col-xl-4 mb-3'>
