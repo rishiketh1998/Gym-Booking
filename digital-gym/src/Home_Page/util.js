@@ -48,7 +48,7 @@ const ReviewList = [
     }
 ]
 
- const DailyQuotesInformation = [
+const DailyQuotesInformation = [
      {
          author: 'Arnold Schwarzenegger, seven-time Mr. Olympia',
          quote: 'The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.'
@@ -91,5 +91,9 @@ const ReviewList = [
      },
  ]
 
+ const ImageURL = {
+         Home: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-luxury-gyms-london-1577449934.jpg'
+     }
 
- export {DigitalGymQuote, VideoList, ReviewList, DailyQuotesInformation}
+
+ export {DigitalGymQuote, VideoList, ReviewList, DailyQuotesInformation,ImageURL}
